@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">CDM</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            
+        <link rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.min.css}"/>
+        
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+        
+        <!-- CSS for Header Menu -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/menu.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+        
+        <!-- CSS for add checkbox in dropdown -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/jquery.multiselect.css}"/>
+        
+        <!-- CSS for modal popup -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/modal-popup.css}"/>
+        
+        <!-- CSS for spin -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/spin.css}"/>
+        
+        <!-- CSS for datatable -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/dataTables.jqueryui.min.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/dataTables.checkboxes.css}"/>
+        
+    </head>
+    <body>
+        <noscript>
+        <h2>Sorry! Your browser doesn't support Javascript</h2>
+        </noscript>
+            
+        <div th:replace="fragments/header :: header"> This header content is going to be replaced.</div>
+            
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-2" layout:fragment="sidebar">
+                    <h1>This is the layout's sidebar</h1>
+                    <p>This is the sidebar placeholder. This content will be replaced if the page
+                        using the layout also defines a layout:fragment="sidebar" segment.</p>
+                </div>
+                <div class="col" layout:fragment="content">
+                    <h1>This is the Layout's main section</h1>
+                    <p>This is the main content placeholder. This content will be replaced if the page
+                        using the layout also defines a layout:fragment="content" segment. </p>
+                </div>
+            </div>
+        </div>
+        -->
+        <table border="0" style="width: 100%;">
+            <tr>
+                <td style="width: 3%;">
+                    
+                </td>
+                <td style="width: 94%;">
+                    <div>
+                        <div style="float: left; padding-left: 3.5%;">
+                            <!--<label>Welcome to Qwallet portal</label>-->
+                        </div>
+                        <div style="float:right;">
+                            <!--<span th:if="${session.itclpiamsusersession} != null">
+                                <label data-th-text="'Logged in as : ' + ${session.itclpiamsusersession.email}"></label>&nbsp;
+                            </span>
+                            -->
+                            <label>Logged in as : test@yahoo.com</label>&nbsp;
+                        </div>
+                    </div>
+                </td>
+                <td style="width: 3%;">
+                </td>
+            </tr>
+            
+            <tr>
+                <td valign="top">
+                    <div style="padding-left: 12px; width: 100%;">
+                        <input type="image" id="home" src="/images/home.jpeg" alt="Home" title="Home" style="width: 60px; height: 60px;" class="iconHover"/>
+                    </div>
+                </td>
+                <td valign="top" style="padding-left: 10px;">
+                    <div>
+                        <div class="col" layout:fragment="content">
+                            <h1>This is the Layout's main section</h1>
+                            <p>This is the main content placeholder. This content will be replaced if the page
+                                using the layout also defines a layout:fragment="content" segment. </p>
+                        </div>
+                    </div> 
+                </td>
+                <td valign="top" >
+                </td>
+            </tr>
+        </table>
+        
+        <!--
+        <footer th:insert="fragments/footer :: footer" class="footer">
+            This content will remain, but other content will be inserted after it.
+        </footer>
+        -->
+        <!-- javascript -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/javascript" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <!--<script type="text/javascript" th:src="@{/js/jquery.js}"></script>-->
+        <script type="text/javascript" th:src="@{/js/custom.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.multiselect.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery-ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/jquery.numeric.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/amcharts/amcharts.js}"></script>
+        <script type="text/javascript" th:src="@{/js/amcharts/pie.js}"></script>
+        <script type="text/javascript" th:src="@{/js/amcharts/serial.js}"></script>
+            
+        <!-- js for datatable -->
+        <script type="text/javascript" th:src="@{/js/datatable/jquery.dataTables.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/datatable/dataTables.jqueryui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/datatable/dataTables.checkboxes.min.js}"></script>
+    </body>
+</html>

@@ -1,0 +1,222 @@
+.setupHeaderLabel {
+    font-size: 18px;
+}
+
+.loginStatusLabel {
+    color: red;
+}
+
+.errorLabel {
+    color: red;
+}
+
+.successLabel {
+    color: green;
+}
+
+.welcomeLabel {
+    font-size: 22px;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+.tableWidth {
+    width: 400px;
+}
+
+.dropDownWidth {
+    width: 190px;
+}
+
+.modal-footer {
+    border-top: 0px;
+}
+
+.requiredLabel {
+    color: red;
+}
+
+.company-name {
+    float: left;
+    font-size: 20px;
+    height: 50px;
+    line-height: 20px;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+input.no-border {
+    border: none;
+    font-size: 15px;
+    width: 70%;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
+#myProgress {
+    position: relative;
+    width: 60%;
+    height: 30px;
+    background-color: #ddd;
+}
+
+#myBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: #4CAF50;
+}
+
+#label {
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
+.labelDashboard {
+    font-size: 18px;
+    font-weight: bold;
+    color: #017ab1;
+}
+
+.labelDashboard:hover {
+    font-size: 18px;
+    font-weight: bold;
+    color: #017ab1;
+    cursor: pointer;
+}
+
+.divDashboard {
+    background-color: #fafafa;
+    width: 250px;
+    height: 110px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #dbdbdb;
+}
+
+.divDashboard:hover {
+    background-color: #fafafa;
+    width: 250px;
+    height: 110px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #4286f4;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.divDashboardContent {
+    background-color: #edf6ff;
+    /*width: 410px;*/
+    height: 90px;
+    padding: 10px;
+    border-style: solid;
+    border-color: #d4e9fc;
+}
+
+.labelHeaderDashboardContent {
+    font-size: 18px;
+    font-weight: bold;
+    color: #017ab1;
+}
+
+.labelHeaderDashboardContent:hover {
+    font-size: 18px;
+    font-weight: bold;
+    color: #017ab1;
+    cursor:default;
+}
+
+.labelDashboardContent {
+    font-size: 20px;
+    font-weight: bold;
+    color: #242424;
+}
+
+.linkDashboardContent:hover {
+    cursor: pointer;
+}
+
+.divDashboardContentRight {
+    background-color: #edf6ff;
+    padding: 10px;
+    border-style: solid;
+    border-color: #d4e9fc;
+    width: 100%;
+}
+
+.divDashboardContentMain {
+    background-color: #edf6ff;
+    /*width: 322px;*/
+    padding: 10px;
+    border-style: solid;
+    border-color: #d4e9fc;
+    height: 115px;
+}
+
+.iconHover:hover {
+    cursor: pointer;
+}
+
+.childMenuLabel1
+{
+    padding-left: 20px;
+}
+
+.childMenuLabel2
+{
+    padding-left: 40px;
+}
+
+.linkButton {
+    font-size: 14px;
+    font-weight: bold;
+    color: #242424;
+}
+
+.linkButton:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Drop menu start*/
+.dropbtn {
+    background-color: #ffffff;
+    color: #717171;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #efefef;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #dddddd;}
+/*Drop menu end*/

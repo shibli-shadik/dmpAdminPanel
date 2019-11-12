@@ -1,0 +1,66 @@
+<div th:fragment="header">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-fixed-top"
+         style="background-color: #4286f4; border-color: #080808;">
+        <div style="padding-top: 5px;">
+            <div class="navbar-header" style="float: left; padding-left: 10px;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <!--<label class="company-name" >ITCL</label>-->
+                            <img src="/images/dmp_logo.jpg" style="width: 25px; height: 25px;"/>
+                            <label style="color: white; padding-top: 5px;">Dhaka Metropolitan Police</label>
+                        </td>
+                    </tr>			
+                </table>
+            </div>
+                
+            <div id="navbar"style="float: right; padding-right: 15px;">
+                <div class="navigation">
+                    <nav>					
+                        <ul class="nav topnav bold">
+                            
+                            <li><a href="/home">Home </a></li>
+                                
+                            <li class="dropdown"><a href="#">Operation <i class="icon-angle-down"></i></a>
+                                <ul class="dropdown-menu bold">
+                                    <li><a href="/batchProcess">Transaction Batch Process</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="dropdown"><a href="#">Configuration <i class="icon-angle-down"></i></a>
+                                <ul class="dropdown-menu bold">
+                                    <li><a href="/banks">Bank</a></li>
+                                    <li><a href="/branches">Branch</a></li>
+                                    <li><a href="/terminal">Terminal</a></li>
+                                    <li><a href="/user">User</a></li>
+                                </ul>
+                            </li>
+                                
+                            <li class="dropdown">
+                                <a href="#">
+                                    <!--<span th:if="${session.itclpiamsusersession} != null">
+                                        <label data-th-text="${session.itclpiamsusersession.email}"></label>
+                                    </span>
+                                    -->
+                                    <label>test@yahoo.com</label>
+                                    <i class="icon-angle-down"></i>
+                                </a>
+                                <ul class="dropdown-menu bold">
+                                    <span>
+                                        <li><a href="/user/userProfile">My Profile</a></li>
+                                        <li><a href="/user/changePassword">Change Password</a></li>
+                                        <li><a href="/logout">Logout </a></li>
+                                    </span>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+</div>

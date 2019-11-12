@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DMP</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        
+        <link rel="stylesheet" href="/css/login.css"/>
+        
+        <style>
+            .loader {
+                border: 5px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 5px solid #3498db;
+                width: 20px;
+                height: 20px;
+                -webkit-animation: spin 2s linear infinite;
+                animation: spin 2s linear infinite;
+            }
+            
+            @-webkit-keyframes spin {
+                0% { -webkit-transform: rotate(0deg); }
+                100% { -webkit-transform: rotate(360deg); }
+            }
+            
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+        
+    </head>
+    
+    <body class="w3-content" style="max-width:100%">
+        <nav class="navbar navbar-fixed-top"
+             style="background-color: #4286f4; border-color: #080808;">
+            <table style="width: 100%;" border="0">
+                <tr>
+                    <td style="width: 100%; padding-top: 5px;" valign="top">
+                        <!--<img src="/images/dmp_logo.jpg" style="height: 50%;"/>-->
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <label style="font-size: 25px; color: white;">Dhaka Metropolitan Police</label>
+                    </td>
+                        
+                    <!--
+                    <td style="width: 70%;">
+                        
+                    </td>
+                        
+                    <td style="width: 15%; padding-top: 16px;" valign="top">
+                        
+                    </td>
+                    -->
+                </tr>
+            </table>
+        </nav>
+        <br/><br/><br/>
+        
+        <div id="login">
+            <form id="loginForm" onsubmit="return validateForm1()" method="post" action="/home" role="form" style="border-color: #b6d3ef;">
+                <div class="field_container">
+                    <label style="color: #757575; font-size: 17px;">Login</label>
+                </div>
+                
+                <div class="field_container">
+                    <input type="text" id="txtEmail" name="email" placeholder="Email Address" style="width: 310px;"/>
+                </div>
+                
+                <div class="field_container">
+                    <input type="Password" id="txtPassword" name="password" placeholder="Password" style="width: 310px;"/>
+                </div>
+                
+                <div class="field_container">
+                    <div style="height: 100%;">
+                        <div style="float: left; padding-top: 6%;">
+                            <div>
+                                <div style="float: left;">
+                                    <a class="anchor" id="forgotPassword" style="color: #4286f4; font-family: Tahoma; font-weight: bold;">Forgot password?</a> 
+                                </div>
+                                <div style="float:right; padding-left: 5px;">
+                                    <div id="loader" class="loader"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="float: right;">
+                            <button id="btnLogin" type="submit">
+                                <span class="button_text" style="font-weight: bold;">Sign In</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <label id="lblStatus" style="color: red; font-family: Tahoma;" data-th-text="${message}"></label>
+                    </div>
+                </div>
+                
+                <div id="sign_in_options" class="field_container">
+                    <div id="sign_in_alternatives_container">
+                    </div>
+                    <div id="remember_me_container">
+                        <!--           <input name="user[remember_me]" type="hidden" value="0"/><input id="user_remember_me" name="user[remember_me]" type="checkbox" value="1"/>
+                                  <label class="login_link" for="user_remember_me" id="remember_me_label">stay signed in</label>
+                        -->    
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+            
+            <div id="dont_have_an_account">
+            </div>
+        </div>
+        <nav class="navbar-fixed-bottom"
+             style="background-color: #4286f4; border-color: #080808; height: 35px;">
+            <table style="width: 100%; height: 100%;" border="0">
+                <tr>
+                    <td style="width: 15%; padding-top: 2px; padding-left: 40px;" valign="top">
+                        
+                    </td>
+                    
+                    <td style="width: 70%;">
+                        <label style="font-weight: normal; font-size: 11px; color: white;">Copyright &copy; IT Consultants Ltd.</label>
+                    </td>
+                    
+                    <td style="width: 15%; padding-top: 16px;" valign="top">
+                        
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </body>
+</html>
+    
+<!-- javascript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/js/jquery-3.3.1.min.js"></script>
+    
+<script>
+    /*<![CDATA[*/
+    function validateForm() {
+	
+        if ($("#txtEmail").val() === null || $("#txtEmail").val() === "") 
+        {
+            $("#lblStatus").text("Please enter your email");
+            return false;
+        }
+        
+        if ($("#txtPassword").val() === null || $("#txtPassword").val() === "") 
+        {
+            $("#lblStatus").text("Please enter your password");
+            return false;
+        }
+    }
+    
+    $(document).ready(function() {
+        
+        $("#loader").hide();
+        
+        window.onload = function () { 
+            $("#loader").hide();
+        };
+        
+        $("#txtEmail").keypress(function() {
+            $("#lblStatus").text("");
+        });
+        
+        $("#linkHome").click(function() {
+            window.location.replace(window.location.protocol + "//" + window.location.host + "/");
+        });
+        
+        $("#forgotPassword").click(function() {
+            $("#lblStatus").text("");
+            
+            $.ajaxSetup({
+                beforeSend:function(){
+                    $("#loader").show();
+                },
+                complete:function(){
+                    $("#loader").hide();
+                }
+            });
+            
+            sentVerificationCode();
+        });
+    });
+    
+    function sentVerificationCode() 
+    {
+        var userEmail = $('#txtEmail').val();
+        
+        $.ajax({
+            url : "/forgotPassword",
+            type : "POST",
+            dataType : 'json',
+            data : {
+                "userEmail" : userEmail
+            },
+            success : function(data) 
+            {
+                $.each(data, function(index, element) 
+                {
+                    $("#lblStatus").html(element);
+                    
+                    if(element.substring(0,4) === 'Mail')
+                    {
+                        $("#lblStatus").css("color", "green");
+                    }
+                    else
+                    {
+                        $("#lblStatus").css("color", "red");
+                    }
+                });
+            },
+            error : function() {
+            }
+        });
+    }
+    /*]]>*/
+</script>
