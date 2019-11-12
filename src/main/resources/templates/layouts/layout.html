@@ -1,7 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">CDM</title>
+    <span th:if="${session.dmpparserusersession} != null">
+        <input id="isSessionAlive" type="text" value="notnull" style="display: none;" />
+    </span>
+        
+    <span th:unless="${session.dmpparserusersession} != null">
+        <input id="isSessionAlive" type="text" value="null" style="display: none;"/>
+    </span>
+        
+    <script>
+        if(document.getElementById('isSessionAlive').value == 'null')
+        {
+            window.location.replace(window.location.protocol + "//" + window.location.host + "/");
+        }
+    </script>
+    
+        <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">DMP</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
             
         <link rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.min.css}"/>

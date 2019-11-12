@@ -60,7 +60,7 @@
         <br/><br/><br/>
         
         <div id="login">
-            <form id="loginForm" onsubmit="return validateForm1()" method="post" action="/home" role="form" style="border-color: #b6d3ef;">
+            <form id="loginForm" onsubmit="return validateForm()" method="post" action="/home" role="form" style="border-color: #b6d3ef;">
                 <div class="field_container">
                     <label style="color: #757575; font-size: 17px;">Login</label>
                 </div>
@@ -138,8 +138,8 @@
     
 <script>
     /*<![CDATA[*/
-    function validateForm() {
-	
+    function validateForm() 
+    {
         if ($("#txtEmail").val() === null || $("#txtEmail").val() === "") 
         {
             $("#lblStatus").text("Please enter your email");
