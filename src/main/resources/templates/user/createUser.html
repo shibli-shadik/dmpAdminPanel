@@ -1,0 +1,138 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+    <div layout:fragment="content">
+        
+        <form method="post" name="newUser_form" id="newUser_form" onsubmit="return validateForm()"
+              action="/user/save" role="form" enctype="multipart/form-data">
+            <label class="setupHeaderLabel"> Create new user</label><br />
+            <br />
+            <table>
+                <tr>
+                    <td>
+                        <table style="border-spacing: 10px; border-collapse: separate; width: 610px;">
+                            <tbody>
+                                <tr>
+                                    <td class="labelColor" style="width: 140px">
+                                        <label> First Name</label></td>
+                                    <td>
+                                        <input type="text" name="firstName" id="firstName" maxlength="100" style="width: 250px;"/>
+                                        <label style="color: red;">*</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Middle Name</label></td>
+                                    <td>
+                                        <input type="text" name="middleName" id="middleName" maxlength="100" style="width: 250px;"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Last Name</label></td>
+                                    <td>
+                                        <input type="text" name="lastName" id="lastName" maxlength="100" style="width: 250px;"/>
+                                        <label style="color: red;">*</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Email</label></td>
+                                    <td>
+                                        <input type="text" name="email" id="email" maxlength="100" style="width: 250px;"/>
+                                        <label style="color: red;">*</label>
+                                        <label id="emailMsg" style="color: red;" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Mobile</label></td>
+                                    <td>
+                                        <input type="text" name="mobile" id="mobile" maxlength="11" style="width: 250px;"/>
+                                        <label id="lblRequiredMobile" style="color: red;">*</label>
+                                        <label id="mobileMsg" style="color: red;" />
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Address</label></td>
+                                    <td>
+                                        <textarea rows="3" cols="50" name="address" id="address"></textarea>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> National Id Card No</label></td>
+                                    <td>
+                                        <input type="text" name="nationalIdCardNo" id="nationalIdCardNo" maxlength="100" style="width: 250px;"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Date of Birth</label></td>
+                                    <td>
+                                        <input type="text" name="dateOfBirth" id="dateOfBirth" style="width: 250px;"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> User Role</label>
+                                    </td>
+                                    <td>
+                                        <select name="role" id="role" style="width: 250px;">
+                                            <option value="0">Select role</option>
+                                            <span data-th-each="role : ${roles}">
+                                                <option th:value="${role.id}" th:text="${role.roleTypeDisplayName}" />
+                                            </span>
+                                        </select>
+                                        <label style="color: red;">*</label>
+                                    </td>
+                                </tr>
+                                    
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style=" vertical-align: top;">
+                        <table id="usrImage" style="width: 200px; padding-left: 15px; border-spacing: 10px; border-collapse: separate;">
+                            <tbody>
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Upload Photo</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <img id="imgUser" src="/images/no_image_user.png" style="width: 250px;" alt="User image" />
+                                        <br/><br/>
+                                        <input type="file" name="userImage" id="userImage" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+                
+            <input type="hidden" id="userId"
+                   name="userId" th:value="0" />
+            <input
+                type="submit" id="submit" value="Save" class="btn btn-primary"></input>
+            <input type="button" id="cancel" value="Cancel"
+                   class="btn btn-primary"
+                   onclick="javascript:window.location='/user';"></input>
+            &nbsp;<label id="lblStatus"></label>
+            <br/>
+            <br/>
+            <br/>
+        </form>
+    </div>
+</html>
+    
+<script src="/js/user/user.js"></script>

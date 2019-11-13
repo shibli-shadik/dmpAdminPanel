@@ -77,11 +77,9 @@
                             <!--<label>Welcome to Qwallet portal</label>-->
                         </div>
                         <div style="float:right;">
-                            <!--<span th:if="${session.itclpiamsusersession} != null">
-                                <label data-th-text="'Logged in as : ' + ${session.itclpiamsusersession.email}"></label>&nbsp;
+                            <span th:if="${session.dmpparserusersession} != null">
+                                <label data-th-text="'Logged in as : ' + ${session.dmpparserusersession.email}"></label>&nbsp;
                             </span>
-                            -->
-                            <label>Logged in as : test@yahoo.com</label>&nbsp;
                         </div>
                     </div>
                 </td>

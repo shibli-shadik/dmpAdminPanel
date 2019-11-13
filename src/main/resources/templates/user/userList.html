@@ -1,0 +1,83 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+    <div layout:fragment="content">
+        <div>
+            <label class="setupHeaderLabel">User List</label><br /> <br />
+            <a class="btn btn-primary" href="/user/createUser">Create new user</a>
+            &nbsp;<label id="lblMessage" data-th-text="${message}"></label>
+        </div>
+        <hr />
+        <div class="span12" style="width: 100%;">
+            <table class="table table-striped display" id="user" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th style="vertical-align: top;">User Id</th>
+                        <th style="vertical-align: top;">Photo</th>
+                        <th style="vertical-align: top;">Name</th>
+                        <th style="vertical-align: top;">Email</th>
+                        <th style="vertical-align: top;">User Type</th>
+                        <th style="vertical-align: top;">Mobile</th>
+                        <th style="vertical-align: top;">Enabled</th>
+                        <th style="vertical-align: top;">Update</th>
+                        <th style="vertical-align: top;">Delete</th>
+                        <th style="vertical-align: top;">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-th-each="user : ${users}">
+                        <td class="message" data-th-text="${user.id}"></td>
+                        <td>
+                            <span th:if="${user.image} == null">
+                                <img src="/images/no_image_user.png" style="width: 50px;" />
+                            </span>
+                            
+                            <span th:unless="${user.image} == null">
+                                <img th:src="@{'/images/getImage/' + ${user.image.id}}" id="userImage" style="width: 50px;"/>
+                            </span>
+                        </td>
+                        
+                        <td class="message" data-th-text="${user.displayName}"></td>
+                        <td class="message" data-th-text="${user.email}"></td>
+                        <td class="message" data-th-text="${user.role.roleTypeDisplayName}"></td>
+                        <td class="message" data-th-text="${user.mobile}"></td>
+                        
+                <span th:if="${user.isEnabled()} == true">
+                    <td class="message" data-th-text="Yes" style="text-align: center;"></td>
+                </span> 
+                <span th:unless="${user.isEnabled()} == true">
+                    <td class="message" data-th-text="No" style="text-align: center;"></td>
+                </span>
+                        
+                <td style="text-align: center;">
+                    <a th:href="@{'/user/{id}/edit'(id=${user.id})}"
+                       class="edit" th:attr="name=${user.displayName}"> <img
+                            src="/images/edit.png" alt="Edit"
+                            style="width: 20px; height: 20px;" />
+                    </a>
+                </td>
+                        
+                <td style="text-align: center;">
+                    <a
+                        onclick="return confirm('Are you sure to delete this?');"
+                        th:href="@{'/user/{id}/delete'(id=${user.id})}"
+                        class="delete" th:attr="name=${user.displayName}"> <img
+                            src="/images/delete.png" alt="Delete"
+                            style="width: 24px; height: 24px;" />
+                    </a>
+                </td>
+                        
+                <td style="text-align: center;">
+                    <a th:href="@{'/user/{id}/view'(id=${user.id})}"
+                       class="edit" th:attr="name=${user.displayName}"> <img
+                            src="/images/view.png" alt="View"
+                            style="width: 20px; height: 20px;" />
+                    </a>
+                </td>
+                        
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</html>
+    
+<script src="/js/user/user.js"></script>

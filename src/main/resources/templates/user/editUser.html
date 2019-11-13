@@ -1,0 +1,167 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+    <div layout:fragment="content">
+        <form method="post" onsubmit="return validateForm()"
+              action="/user/update" role="form" enctype="multipart/form-data">
+            <label class="setupHeaderLabel"> Update user</label><br />
+            <br />
+            <table>
+                <tr>
+                    <td>
+                        <table style="border-spacing: 10px; border-collapse: separate; width: 610px;">
+                            <tbody>
+                                <tr>
+                                    <td class="labelColor" style="width: 140px">
+                                        <label> First Name</label></td>
+                                    <td>
+                                        <input type="text" name="firstName" id="firstName" maxlength="100" style="width: 250px;" th:field="${user.firstName}"/>
+                                        <label style="color: red;">*</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Middle Name</label></td>
+                                    <td>
+                                        <input type="text" name="middleName" id="middleName" maxlength="100" style="width: 250px;" th:field="${user.middleName}"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Last Name</label></td>
+                                    <td>
+                                        <input type="text" name="lastName" id="lastName" maxlength="100" style="width: 250px;" th:field="${user.lastName}"/>
+                                        <label style="color: red;">*</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Email</label></td>
+                                    <td>
+                                        <input type="text" name="email" id="email" maxlength="100" style="width: 250px;" readonly="true" th:field="${user.email}"/>
+                                    </td>
+                                </tr>
+                                    
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Phone No</label></td>
+                                    <td>
+                                        <input type="text" name="mobile" id="mobile" maxlength="100" style="width: 250px;" readonly="true" th:field="${user.mobile}"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr id="trAddress">
+                                    <td class="labelColor">
+                                        <label> Address</label></td>
+                                    <td>
+                                        <textarea rows="3" cols="50" name="address" id="address" th:field="${user.address}"></textarea>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> National Id Card No</label></td>
+                                    <td>
+                                        <input type="text" name="nationalIdCardNo" id="nationalIdCardNo" maxlength="100" style="width: 250px;" th:field="${user.nationalIdCardNo}"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Date of Birth</label></td>
+                                    <td>
+                                        <input type="text" name="dateOfBirth" id="dateOfBirth" style="width: 250px;" th:field="${user.dateOfBirth}"/>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> User Type</label>
+                                    </td>
+                                    <td>
+                                        <select name="role" id="role" class="dropDownWidth" style="width: 250px;">
+                                            <span data-th-each="role : ${roles}">
+                                                <span th:if="${role} == ${user.role}">
+                                                    <option th:value="${role.id}" th:text="${role.roleTypeDisplayName}" selected="selected"/>
+                                                </span>
+                                                    
+                                                <span th:unless="${role} == ${user.role}">
+                                                    <option th:value="${role.id}" th:text="${role.roleTypeDisplayName}"/>
+                                                </span>
+                                                    
+                                            </span>
+                                        </select>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Is Enabled</label></td>
+                                    <td>
+                                        <span th:if="${user.isEnabled()} == true">
+                                            <input type="checkbox" name="isEnabled" id="chkEnabled" checked="checked"></input>
+                                        </span>
+                                        <span th:unless="${user.isEnabled()} == true">
+                                            <input type="checkbox" name="isEnabled" id="chkEnabled"></input>
+                                        </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Reset Password</label></td>
+                                    <td>
+                                        <input type="checkbox" name="resetPassword" id="chkResetPassword"></input>
+                                    </td>
+                                </tr>
+                                    
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style=" vertical-align: top;">
+                        <table id="usrImage" style="width: 200px; padding-left: 15px; border-spacing: 10px; border-collapse: separate;">
+                            <tbody>
+                                <tr>
+                                    <td class="labelColor">
+                                        <label> Uploded Photo</label>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>
+                                        <span th:if="${user.image} == null">
+                                            <img src="/images/no_image_user.png" style="width: 250px;" id="imgUser" alt="User image"/>
+                                        </span>
+                                        
+                                        <span th:unless="${user.image} == null">
+                                            <img th:src="@{'/images/getImage/' + ${user.image.id}}" id="imgUser" style="width: 250px;" alt="User image"/>
+                                        </span>
+                                        
+                                        <br/><br/>
+                                        <input type="file" name="userImage" id="userImage" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+                
+            <input type="hidden" id="userId"
+			name="userId" th:value="${user.id}" />
+            <input type="hidden" id="txtIsEnabled" 
+			name="txtIsEnabled" th:value="${user.isEnabled()}" />
+            <input type="hidden" id="txtResetPassword" 
+                   name="txtResetPassword" th:value="false"/>
+            
+            <input type="submit" id="submit" value="Save" class="btn btn-primary"></input>
+            <input type="button" id="cancel" value="Cancel"
+                   class="btn btn-primary"
+                   onclick="javascript:window.location='/user';"></input>
+            &nbsp;<label id="lblStatus"></label>
+        </form>
+    </div>
+</html>
+    
+<script src="/js/user/user.js"></script>

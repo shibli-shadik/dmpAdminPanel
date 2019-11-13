@@ -11,7 +11,7 @@
         </Console>
         
         <!-- Rolling File Appender -->
-        <RollingFile name="FileAppender" fileName="logs/ificdci-log.log" 
+        <RollingFile name="FileAppender" fileName="logs/adminPanel/app-log.log" 
                      filePattern="logs/adminPanel/app-log-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <Pattern>${LOG_PATTERN}</Pattern>

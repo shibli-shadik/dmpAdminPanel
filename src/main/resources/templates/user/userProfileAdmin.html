@@ -1,0 +1,87 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+      xmlns:dt="http://www.thymeleaf.org/dandelion/datatables">
+    <div layout:fragment="content">
+        
+        <label class="setupHeaderLabel"> My Profile</label><br />
+        <br />
+        <table>
+            <tr>
+                <td style="vertical-align: top;"> 
+                    <span th:if="${user.image} == null">
+                        <img src="/images/no_image_user.png" style="width: 250px;" id="imgUser" alt="User image"/>
+                    </span>
+                    
+                    <span th:unless="${user.image} == null">
+                        <img th:src="@{'/images/getImage/' + ${user.image.id}}" id="imgUser" style="width: 250px;" alt="User image"/>
+                    </span>
+                </td>
+                
+                <td style="vertical-align: top;">
+                    <table>
+                        <tr>
+                            <td>
+                                <table id="user_list" style="border-spacing: 10px; border-collapse: separate; width: 600px;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="labelColor" style="width: 140px">
+                                                <label> First Name</label></td>
+                                            <td th:text="${user.firstName}"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Middle Name</label></td>
+                                            <td th:text="${user.middleName}"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Last Name</label></td>
+                                            <td th:text="${user.lastName}"></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Email</label></td>
+                                            <td th:text="${user.email}">
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Phone No</label></td>
+                                            <td th:text="${user.mobile}">
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Address</label></td>
+                                            <td th:utext="${user.address}">
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> National Id Card No</label></td>
+                                            <td th:text="${user.nationalIdCardNo}">
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td class="labelColor">
+                                                <label> Date of Birth</label></td>
+                                            <td th:text="${user.dateOfBirth}">
+                                            </td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</html>
