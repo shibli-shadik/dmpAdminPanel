@@ -1,0 +1,39 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+    <div layout:fragment="content">
+        <div>
+            <label class="setupHeaderLabel">Registered Files</label><br /> <br />
+                
+        </div>
+        <hr />
+        <div class="span12" style="width: 100%;">
+            <table class="table table-striped display" id="tblFiles" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th style="vertical-align: top;">Id</th>
+                        <th style="vertical-align: top;">Name</th>
+                        <th style="vertical-align: top;">Modification Date</th>
+                        <th style="vertical-align: top; text-align: right;">Size</th>
+                        <th style="vertical-align: top; text-align: right;">Total Line</th>
+                        <th style="vertical-align: top;">Status</th>
+                        <th style="vertical-align: top;">Created At</th>
+                        <th style="vertical-align: top;">Updated At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-th-each="file : ${files}">
+                        <td class="message" data-th-text="${file.id}"></td>
+                        <td class="message" data-th-text="${file.fileName}"></td>
+                        <td class="message" data-th-text="${#strings.substring(file.fileModifiedAt, 0, #strings.length(file.fileModifiedAt) - 2)}"></td>
+                        <td class="message" data-th-text="${file.size}" style="text-align: right;"></td>
+                        <td class="message" data-th-text="${file.totalLine}" style="text-align: right;"></td>
+                        <td class="message" data-th-text="${file.status}"></td>
+                        <td class="message" data-th-text="${#strings.substring(file.createdAt, 0, #strings.length(file.createdAt) - 2)}"></td>
+                        <td class="message" data-th-text="${#strings.substring(file.updatedAt, 0, #strings.length(file.updatedAt) - 2)}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</html>
+
+<script src="/js/reports/fileRegister.js"></script>
