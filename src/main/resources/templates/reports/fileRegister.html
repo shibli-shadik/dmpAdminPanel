@@ -1,9 +1,53 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
     <div layout:fragment="content">
         <div>
-            <label class="setupHeaderLabel">Registered Files</label><br /> <br />
-                
+            <label class="setupHeaderLabel">Registered Files</label>
         </div>
+        <hr />
+            
+        <form method="post" action="/fileRegister/search" th:object="${searchCmdFileRegister}">
+            <table style="border-spacing: 10px; border-collapse: separate;">
+                <tr>
+                    <td><label>Date From</label></td>
+                    <td>
+                        <input type="date" name="fromDate" id="fromDate" style="width: 145px; height: 24px;" title="From Date" th:field="${searchCmdFileRegister.fromDate}"/>
+                        <label>to</label>
+                        <input type="date" name="toDate" id="toDate" style="width: 145px; height: 24px;" title="To Date" th:field="${searchCmdFileRegister.toDate}"/>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td><label>Process Status</label></td>
+                    <td>
+                        <select name="processStatus" style="width: 312px;">
+                            <option value="">Select Status</option>
+                            <span data-th-each="status : ${T(dmp.model.enums.FileStatus).values()}">
+                                <span th:if="${searchCmdFileRegister.processStatus} == ${status}">
+                                    <option th:value="${status}" th:text="${status.displayName}" selected="selected"/>
+                                </span>
+                                    
+                                <span th:unless="${searchCmdFileRegister.processStatus} == ${status}">
+                                    <option th:value="${status}" th:text="${status.displayName}"/>
+                                </span>
+                            </span>
+                        </select>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" id="submit" value="Search" name="action"
+                               class="btn btn-primary"/>
+                        <input type="button" value="Clear"
+                               class="btn btn-primary" onclick="javascript:window.location='/fileRegister';"/>
+                        <input type="submit" value="Export as PDF"
+                               class="btn btn-primary" name="action"/>
+                        <label id="lblMessage" data-th-text="${message}"></label>
+                    </td>
+                </tr>
+            </table>
+        </form>
         <hr />
         <div class="span12" style="width: 100%;">
             <table class="table table-striped display" id="tblFiles" cellspacing="0" width="100%">
@@ -35,5 +79,5 @@
         </div>
     </div>
 </html>
-
+    
 <script src="/js/reports/fileRegister.js"></script>
