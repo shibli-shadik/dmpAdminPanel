@@ -1,16 +1,16 @@
 package dmp.controller.reports;
 
 import dmp.model.Helper;
-import dmp.model.enums.FileStatus;
 import dmp.model.reports.FileRegister;
-import dmp.model.reports.FileRegisterRowMapper;
 import dmp.model.reports.SearchCmdFileRegister;
 import dmp.service.UtilServices;
+import dmp.service.pdf.PdfService;
 import dmp.service.reports.IFileRegisterService;
-import java.io.IOException;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +33,9 @@ public class FileRegisterController
     
     @Autowired
     private UtilServices utilServices;
+    
+    @Autowired
+    private PdfService pdfService;
     
     @GetMapping(value = "")
     public String getAllFiles(Model model, @ModelAttribute("searchCmdFileRegister") SearchCmdFileRegister cmdFileRegister)
@@ -58,7 +61,8 @@ public class FileRegisterController
     
     @PostMapping(value = "/search")
     public String searchRegisteredFile(Model model, @ModelAttribute("searchCmdFileRegister") SearchCmdFileRegister cmdFileRegister,
-            @RequestParam Map<String, String> allRequestParams)
+            @RequestParam Map<String, String> allRequestParams,
+            HttpServletRequest request, HttpServletResponse response)
     {
         model.addAttribute("searchCmdFileRegister", cmdFileRegister);
         
@@ -102,16 +106,14 @@ public class FileRegisterController
         
         if (Helper.EXPORT_PDF_ACTION.equals(allRequestParams.get("action")))
         {
-            /*
             try
             {
-            //pdfService.exportTopupDetails(allRequestParams, request, response);
+                pdfService.exportRegisteredFiles(allRequestParams, request, response);
             }
-            catch (IOException ex)
+            catch (Exception ex)
             {
-            LOGGER.error(ex.toString());
+                LOGGER.error(ex.toString());
             }
-            */
         }
         
         List<FileRegister> list = fileRegisterService.searchFileRegister(strFromDate, strToDate, strProcessStatus);
