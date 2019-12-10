@@ -13,16 +13,19 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 @Service
-public class PdfService 
+public class PdfService
 {
     private static final Logger LOGGER = LogManager.getLogger(PdfService.class);
     
     @Autowired
     private PdfCreatorFileRegister pdfCreatorFileRegister;
     
-        public void exportRegisteredFiles(Map<String, String> allRequestParams, HttpServletRequest request,
+    @Autowired
+    private PdfCreatorTransactions pdfCreatorTransactions;
+    
+    public void exportRegisteredFiles(Map<String, String> allRequestParams, HttpServletRequest request,
             HttpServletResponse response)
-        {
+    {
         
         final ServletContext servletContext = request.getSession().getServletContext();
         final File tempDirectory = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
@@ -32,9 +35,9 @@ public class PdfService
         
         response.setContentType("application/pdf");
         response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
-
+        
         OutputStream os = null;
-        try 
+        try
         {
             pdfCreatorFileRegister.createPDF(temperotyFilePath + "\\" + fileName, allRequestParams, request);
             
@@ -47,8 +50,42 @@ public class PdfService
             baos.writeTo(os);
             os.flush();
             os.close();
-        } 
-        catch (Exception ex) 
+        }
+        catch (Exception ex)
+        {
+            LOGGER.error(ex.toString());
+        }
+    }
+    
+    public void exportTransactions(Map<String, String> allRequestParams, HttpServletRequest request,
+            HttpServletResponse response)
+    {
+        
+        final ServletContext servletContext = request.getSession().getServletContext();
+        final File tempDirectory = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
+        final String temperotyFilePath = tempDirectory.getAbsolutePath();
+        
+        String fileName = "Transactions.pdf";
+        
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
+        
+        OutputStream os = null;
+        try
+        {
+            pdfCreatorTransactions.createPDF(temperotyFilePath + "\\" + fileName, allRequestParams, request);
+            
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            baos = PdfByteConverter
+                    .convertPDFToByteArrayOutputStream(temperotyFilePath + "\\"
+                            + fileName);
+            
+            os = response.getOutputStream();
+            baos.writeTo(os);
+            os.flush();
+            os.close();
+        }
+        catch (Exception ex)
         {
             LOGGER.error(ex.toString());
         }

@@ -109,7 +109,7 @@ public class TransactionController
         {
             try
             {
-                pdfService.exportRegisteredFiles(allRequestParams, request, response);
+                pdfService.exportTransactions(allRequestParams, request, response);
             }
             catch (Exception ex)
             {
