@@ -1,0 +1,85 @@
+<html xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{layouts/layout}">
+    <div layout:fragment="content">
+        <div>
+            <label class="setupHeaderLabel">Transactions</label>
+        </div>
+        <hr />
+            
+        <form method="post" action="/transactions/search" th:object="${searchCmdTransaction}">
+            <table style="border-spacing: 10px; border-collapse: separate;">
+                <tr>
+                    <td><label>Date From</label></td>
+                    <td>
+                        <input type="date" name="fromDate" id="fromDate" style="width: 145px; height: 24px;" title="From Date" th:field="${searchCmdTransaction.fromDate}"/>
+                        <label>to</label>
+                        <input type="date" name="toDate" id="toDate" style="width: 145px; height: 24px;" title="To Date" th:field="${searchCmdTransaction.toDate}"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><label>Case Id</label></td>
+                    <td>
+                        <input type="text" name="caseId" th:field="${searchCmdTransaction.caseId}" style="width: 312px;"/>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><label>RRN No</label></td>
+                    <td>
+                        <input type="text" name="rrnNo" th:field="${searchCmdTransaction.rrnNo}" style="width: 312px;"/>
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" id="submit" value="Search" name="action"
+                               class="btn btn-primary"/>
+                        <input type="button" value="Clear"
+                               class="btn btn-primary" onclick="javascript:window.location='/transactions';"/>
+                        <input type="submit" value="Export as PDF"
+                               class="btn btn-primary" name="action">
+                        <label id="lblMessage" data-th-text="${message}"></label>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <hr />
+        <div class="span12" style="width: 140%;">
+            <table class="table table-striped display" id="tblTransaction" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th style="vertical-align: top; text-align: right;">Id</th>
+                        <th style="vertical-align: top; text-align: center;">Case Id</th>
+                        <th style="vertical-align: top; text-align: center;">RRN No</th>
+                        <th style="vertical-align: top; text-align: center;">POS Id</th>
+                        <th style="vertical-align: top; text-align: center;">Terminal Id</th>
+                        <th style="vertical-align: top; text-align: right;">Amount</th>
+                        <th style="vertical-align: top; text-align: center;">Message Code</th>
+                        <th style="vertical-align: top;">Message Response</th>
+                        <th style="vertical-align: top; text-align: center;">Tran Type</th>
+                        <th style="vertical-align: top;">File Name</th>
+                        <th style="vertical-align: top; text-align: center;">Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-th-each="transaction : ${transactions}">
+                        <td class="message" data-th-text="${transaction.id}" style="text-align: right; padding-right: 18px;"></td>
+                        <td class="message" data-th-text="${transaction.caseId}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.rrnNo}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.posId}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.terminalId}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.amount}" style="text-align: right; padding-right: 18px;"></td>
+                        <td class="message" data-th-text="${transaction.messageCode}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.messageResponse}" style="padding-left: 18px;"></td>
+                        <td class="message" data-th-text="${transaction.tranType}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${transaction.fileName}" style="text-align: center;"></td>
+                        <td class="message" data-th-text="${#strings.substring(transaction.createdAt, 0, #strings.length(transaction.createdAt) - 2)}" style="text-align: center;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</html>
+    
+<script src="/js/reports/transactions.js"></script>
