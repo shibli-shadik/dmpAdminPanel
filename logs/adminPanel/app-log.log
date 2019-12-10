@@ -20590,3 +20590,237 @@ Caused by: java.lang.IllegalStateException: getOutputStream() has already been c
 2019-12-10 17:09:02.956  INFO Shadik-Laptop --- [io-8080-exec-10] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
 2019-12-10 17:09:02.968  INFO Shadik-Laptop --- [io-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed initialization in 12 ms
 2019-12-10 17:09:06.858  INFO Shadik-Laptop --- [nio-8080-exec-6] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-12-10 17:19:32.121  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [dmp.DmpAdminPanelApplicationTests], using SpringBootContextLoader
+2019-12-10 17:19:32.136  INFO Shadik-Laptop --- [           main] o.s.t.c.s.AbstractContextLoader          : Could not detect default resource locations for test class [dmp.DmpAdminPanelApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-10 17:19:32.138  INFO Shadik-Laptop --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [dmp.DmpAdminPanelApplicationTests]: DmpAdminPanelApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-12-10 17:19:32.319  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration dmp.DmpAdminPanelApplication for test class dmp.DmpAdminPanelApplicationTests
+2019-12-10 17:19:32.587  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-10 17:19:32.632  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2205a05d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@72ef8d15, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6aa8e115, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5e21e98f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@51a9ad5e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5f20155b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@72ade7e3, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@239105a8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3fce8fd9, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@609bcfb6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7d94beb9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@560348e6]
+2019-12-10 17:19:33.239  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : Starting DmpAdminPanelApplicationTests on Shadik-Laptop with PID 11200 (started by shadik in F:\projects\dmp\dmpAdminPanel)
+2019-12-10 17:19:33.241  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : No active profile set, falling back to default profiles: default
+2019-12-10 17:19:35.590  INFO Shadik-Laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 17:19:35.712  INFO Shadik-Laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109ms. Found 5 repository interfaces.
+2019-12-10 17:19:36.815  INFO Shadik-Laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ff2b18fe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 17:19:37.895  INFO Shadik-Laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2019-12-10 17:19:39.142  INFO Shadik-Laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2019-12-10 17:19:39.372  INFO Shadik-Laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-10 17:19:40.624  INFO Shadik-Laptop --- [           main] o.h.Version                              : HHH000412: Hibernate Core {5.3.7.Final}
+2019-12-10 17:19:40.627  INFO Shadik-Laptop --- [           main] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2019-12-10 17:19:42.789  INFO Shadik-Laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-12-10 17:19:44.643  INFO Shadik-Laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-10 17:19:47.408  INFO Shadik-Laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 17:19:50.220  INFO Shadik-Laptop --- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-10 17:19:50.335  WARN Shadik-Laptop --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-10 17:19:51.453  INFO Shadik-Laptop --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-10 17:19:52.978  INFO Shadik-Laptop --- [           main] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-10 17:19:53.116  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : Started DmpAdminPanelApplicationTests in 20.417 seconds (JVM running for 22.417)
+2019-12-10 17:19:53.630  INFO Shadik-Laptop --- [       Thread-5] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-10 17:19:53.638  INFO Shadik-Laptop --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 17:19:53.642  INFO Shadik-Laptop --- [       Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2019-12-10 17:19:53.659  INFO Shadik-Laptop --- [       Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2019-12-10 17:54:54.878  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [dmp.DmpAdminPanelApplicationTests], using SpringBootContextLoader
+2019-12-10 17:54:54.940  INFO Shadik-Laptop --- [           main] o.s.t.c.s.AbstractContextLoader          : Could not detect default resource locations for test class [dmp.DmpAdminPanelApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-12-10 17:54:54.941  INFO Shadik-Laptop --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [dmp.DmpAdminPanelApplicationTests]: DmpAdminPanelApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-12-10 17:54:55.336  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration dmp.DmpAdminPanelApplication for test class dmp.DmpAdminPanelApplicationTests
+2019-12-10 17:54:55.591  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-12-10 17:54:55.634  INFO Shadik-Laptop --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@39b43d60, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44be0077, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2205a05d, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@72ef8d15, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6aa8e115, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5e21e98f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51a9ad5e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5f20155b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@72ade7e3, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@239105a8, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3fce8fd9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@609bcfb6]
+2019-12-10 17:54:56.255  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : Starting DmpAdminPanelApplicationTests on Shadik-Laptop with PID 21996 (started by shadik in F:\projects\dmp\dmpAdminPanel)
+2019-12-10 17:54:56.257  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : No active profile set, falling back to default profiles: default
+2019-12-10 17:55:01.375  INFO Shadik-Laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 17:55:02.111  INFO Shadik-Laptop --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 721ms. Found 5 repository interfaces.
+2019-12-10 17:55:04.382  INFO Shadik-Laptop --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$32c8a65e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 17:55:05.251  INFO Shadik-Laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2019-12-10 17:55:05.676  INFO Shadik-Laptop --- [           main] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2019-12-10 17:55:05.975  INFO Shadik-Laptop --- [           main] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-10 17:55:06.449  INFO Shadik-Laptop --- [           main] o.h.Version                              : HHH000412: Hibernate Core {5.3.7.Final}
+2019-12-10 17:55:06.452  INFO Shadik-Laptop --- [           main] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2019-12-10 17:55:07.044  INFO Shadik-Laptop --- [           main] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-12-10 17:55:08.558  INFO Shadik-Laptop --- [           main] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-10 17:55:11.321  INFO Shadik-Laptop --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 17:55:15.063  INFO Shadik-Laptop --- [           main] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-10 17:55:15.218  WARN Shadik-Laptop --- [           main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-10 17:55:16.702  INFO Shadik-Laptop --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-10 17:55:18.382  INFO Shadik-Laptop --- [           main] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-10 17:55:18.521  INFO Shadik-Laptop --- [           main] d.DmpAdminPanelApplicationTests          : Started DmpAdminPanelApplicationTests in 22.806 seconds (JVM running for 25.197)
+2019-12-10 17:55:18.896  INFO Shadik-Laptop --- [       Thread-5] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-10 17:55:18.902  INFO Shadik-Laptop --- [       Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 17:55:18.906  INFO Shadik-Laptop --- [       Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2019-12-10 17:55:18.922  INFO Shadik-Laptop --- [       Thread-5] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2019-12-10 17:57:37.580  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Starting DmpAdminPanelApplication on Shadik-Laptop with PID 8016 (F:\projects\dmp\dmpAdminPanel\target\classes started by shadik in F:\projects\dmp\dmpAdminPanel)
+2019-12-10 17:57:37.590  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : No active profile set, falling back to default profiles: default
+2019-12-10 17:57:38.049  INFO Shadik-Laptop --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-12-10 17:57:38.050  INFO Shadik-Laptop --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-12-10 17:57:40.475  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 17:57:40.656  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164ms. Found 5 repository interfaces.
+2019-12-10 17:57:41.724  INFO Shadik-Laptop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$679fba21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 17:57:43.314  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2019-12-10 17:57:43.345  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-10 17:57:43.367  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-12-10 17:57:43.368  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-12-10 17:57:43.388  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.AprLifecycleListener             : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;E:\app\shadik\product\11.2.0\client_1\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\maven\apache-maven-3.5.0\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\opencv\build\x86\vc10\bin;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\xampp\mysql\bin;C:\Program Files\Java\jdk1.8.0_131\bin;C:\Users\shadik\AppData\Local\Microsoft\WindowsApps;C:\Users\shadik\AppData\Roaming\npm;C:\Users\shadik\AppData\Local\Programs\Microsoft VS Code\bin;;.]
+2019-12-10 17:57:43.621  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2019-12-10 17:57:43.621  INFO Shadik-Laptop --- [  restartedMain] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 5571 ms
+2019-12-10 17:57:45.140  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Starting...
+2019-12-10 17:57:45.628  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-1 - Start completed.
+2019-12-10 17:57:45.824  INFO Shadik-Laptop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-10 17:57:46.167  INFO Shadik-Laptop --- [  restartedMain] o.h.Version                              : HHH000412: Hibernate Core {5.3.7.Final}
+2019-12-10 17:57:46.171  INFO Shadik-Laptop --- [  restartedMain] o.h.c.Environment                        : HHH000206: hibernate.properties not found
+2019-12-10 17:57:46.623  INFO Shadik-Laptop --- [  restartedMain] o.h.a.c.Version                          : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-12-10 17:57:47.129  INFO Shadik-Laptop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-10 17:57:50.147  INFO Shadik-Laptop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 17:57:50.214  INFO Shadik-Laptop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-10 17:57:52.226  INFO Shadik-Laptop --- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-10 17:57:52.351  WARN Shadik-Laptop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-10 17:57:53.403  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-10 17:57:54.145  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-10 17:57:54.291  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2019-12-10 17:57:54.359  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-10 17:57:54.369  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Started DmpAdminPanelApplication in 17.808 seconds (JVM running for 19.074)
+2019-12-10 18:05:50.400  INFO Shadik-Laptop --- [nio-8080-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-10 18:05:50.400  INFO Shadik-Laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2019-12-10 18:05:50.428  INFO Shadik-Laptop --- [nio-8080-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 28 ms
+2019-12-10 18:05:50.733  INFO Shadik-Laptop --- [nio-8080-exec-1] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-12-10 18:06:03.894 ERROR Shadik-Laptop --- [nio-8080-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.hibernate.LazyInitializationException: could not initialize proxy [dmp.model.user.Role#1] - no Session] with root cause
+org.hibernate.LazyInitializationException: could not initialize proxy [dmp.model.user.Role#1] - no Session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:169)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:309)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:45)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:95)
+	at dmp.model.user.Role$HibernateProxy$sjTh8XRM.getRoleType(Unknown Source)
+	at dmp.controller.admin.setup.UserController.changePassword(UserController.java:167)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:800)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:90)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:117)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1417)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-10 18:07:18.378  INFO Shadik-Laptop --- [       Thread-7] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-10 18:07:18.382  INFO Shadik-Laptop --- [       Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 18:07:18.391  INFO Shadik-Laptop --- [       Thread-7] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown initiated...
+2019-12-10 18:07:18.411  INFO Shadik-Laptop --- [       Thread-7] c.z.h.HikariDataSource                   : HikariPool-1 - Shutdown completed.
+2019-12-10 18:07:19.071  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Starting DmpAdminPanelApplication on Shadik-Laptop with PID 8016 (F:\projects\dmp\dmpAdminPanel\target\classes started by shadik in F:\projects\dmp\dmpAdminPanel)
+2019-12-10 18:07:19.071  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : No active profile set, falling back to default profiles: default
+2019-12-10 18:07:19.951  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 18:07:19.994  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 5 repository interfaces.
+2019-12-10 18:07:20.129  INFO Shadik-Laptop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$679fba21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 18:07:20.369  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2019-12-10 18:07:20.373  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-10 18:07:20.374  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-12-10 18:07:20.374  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-12-10 18:07:20.422  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2019-12-10 18:07:20.423  INFO Shadik-Laptop --- [  restartedMain] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 1348 ms
+2019-12-10 18:07:20.693  WARN Shadik-Laptop --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Cannot deserialize session attribute [dmpparserusersession] for session [FE54F3AD79B42F7B6639384962A115BF]
+2019-12-10 18:07:20.749  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Starting...
+2019-12-10 18:07:20.816  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-2 - Start completed.
+2019-12-10 18:07:20.827  INFO Shadik-Laptop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-10 18:07:20.870  INFO Shadik-Laptop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-10 18:07:21.391  INFO Shadik-Laptop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 18:07:21.403  INFO Shadik-Laptop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-10 18:07:21.733  INFO Shadik-Laptop --- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-10 18:07:21.741  WARN Shadik-Laptop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-10 18:07:21.817  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-10 18:07:22.018  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-10 18:07:22.076  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2019-12-10 18:07:22.083  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-10 18:07:22.084  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Started DmpAdminPanelApplication in 3.11 seconds (JVM running for 586.79)
+2019-12-10 18:07:22.090  INFO Shadik-Laptop --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-12-10 18:07:30.642  INFO Shadik-Laptop --- [      Thread-12] o.s.s.c.ThreadPoolTaskExecutor           : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-10 18:07:30.644  INFO Shadik-Laptop --- [      Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 18:07:30.645  INFO Shadik-Laptop --- [      Thread-12] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown initiated...
+2019-12-10 18:07:30.654  INFO Shadik-Laptop --- [      Thread-12] c.z.h.HikariDataSource                   : HikariPool-2 - Shutdown completed.
+2019-12-10 18:07:31.403  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Starting DmpAdminPanelApplication on Shadik-Laptop with PID 8016 (F:\projects\dmp\dmpAdminPanel\target\classes started by shadik in F:\projects\dmp\dmpAdminPanel)
+2019-12-10 18:07:31.403  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : No active profile set, falling back to default profiles: default
+2019-12-10 18:07:31.991  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-10 18:07:32.031  INFO Shadik-Laptop --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 5 repository interfaces.
+2019-12-10 18:07:32.145  INFO Shadik-Laptop --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$679fba21] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-10 18:07:32.430  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port(s): 8080 (http)
+2019-12-10 18:07:32.431  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-10 18:07:32.432  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+2019-12-10 18:07:32.433  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/9.0.14]
+2019-12-10 18:07:32.505  INFO Shadik-Laptop --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+2019-12-10 18:07:32.505  INFO Shadik-Laptop --- [  restartedMain] o.s.w.c.ContextLoader                    : Root WebApplicationContext: initialization completed in 1097 ms
+2019-12-10 18:07:32.751  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Starting...
+2019-12-10 18:07:32.768  INFO Shadik-Laptop --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-3 - Start completed.
+2019-12-10 18:07:32.780  INFO Shadik-Laptop --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-12-10 18:07:32.807  INFO Shadik-Laptop --- [  restartedMain] o.h.d.Dialect                            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2019-12-10 18:07:33.384  INFO Shadik-Laptop --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-10 18:07:33.395  INFO Shadik-Laptop --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-12-10 18:07:33.702  INFO Shadik-Laptop --- [  restartedMain] o.s.s.c.ThreadPoolTaskExecutor           : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-10 18:07:33.709  WARN Shadik-Laptop --- [  restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-10 18:07:33.766  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-10 18:07:33.929  INFO Shadik-Laptop --- [  restartedMain] o.s.b.a.e.w.EndpointLinksResolver        : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-10 18:07:33.973  INFO Shadik-Laptop --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-8080"]
+2019-12-10 18:07:33.980  INFO Shadik-Laptop --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-10 18:07:33.981  INFO Shadik-Laptop --- [  restartedMain] d.DmpAdminPanelApplication               : Started DmpAdminPanelApplication in 2.662 seconds (JVM running for 598.687)
+2019-12-10 18:07:33.984  INFO Shadik-Laptop --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2019-12-10 18:07:52.765  INFO Shadik-Laptop --- [io-8080-exec-10] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-10 18:07:52.766  INFO Shadik-Laptop --- [io-8080-exec-10] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+2019-12-10 18:07:52.774  INFO Shadik-Laptop --- [io-8080-exec-10] o.s.w.s.DispatcherServlet                : Completed initialization in 8 ms
+2019-12-10 18:07:54.733  INFO Shadik-Laptop --- [nio-8080-exec-6] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory

@@ -1,6 +1,8 @@
 package dmp.controller.admin.setup;
 
 import dmp.model.enums.RoleType;
+import dmp.model.settings.Settings;
+import dmp.model.settings.repository.SettingsRepository;
 import dmp.model.user.User;
 import dmp.model.user.repository.RoleRepository;
 import dmp.model.user.repository.UserRepository;
@@ -33,6 +35,9 @@ public class UserController {
     
     @Autowired
     private RoleRepository roleRepository;
+    
+    @Autowired
+    private SettingsRepository settingsRepository;
     
     @Autowired
     private UserService userService;
@@ -150,5 +155,24 @@ public class UserController {
         {
             return "user/userProfileUser";
         }
+    }
+    
+    @GetMapping("/changePassword")
+    public String changePassword(Model model, HttpServletRequest request) 
+    {
+        Settings settings = settingsRepository.findByKeyName("passwordMinCharLength");
+        model.addAttribute("passwordMinCharLength", settings.getKeyValue());
+        
+        return "user/changePassword";
+    }
+    
+    @PostMapping("/saveNewPassword")
+    @ResponseBody
+    public String saveNewPassword(HttpServletRequest request)
+    {
+        String oldPassword = request.getParameter("oldPassword");
+        String newPassword = request.getParameter("newPassword");
+        
+        return "[{\"status\" : \"" + userService.saveNewPassword(oldPassword, newPassword, request) + "\"}]";
     }
 }

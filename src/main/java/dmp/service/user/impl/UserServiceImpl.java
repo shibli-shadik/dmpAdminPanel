@@ -1,5 +1,7 @@
 package dmp.service.user.impl;
 
+import dmp.model.settings.Settings;
+import dmp.model.settings.repository.SettingsRepository;
 import dmp.model.user.Images;
 import dmp.model.user.User;
 import dmp.model.user.repository.ImagesRepository;
@@ -10,6 +12,7 @@ import dmp.service.util.SHA;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
+import javax.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,9 @@ public class UserServiceImpl implements UserService
     
     @Autowired
     private ImagesRepository imagesRepository;
+    
+    @Autowired
+    private SettingsRepository settingsRepository;
     
     @Autowired
     private UtilServices utilServices;
@@ -214,5 +220,52 @@ public class UserServiceImpl implements UserService
         }
         
         return response;
+    }
+    
+    @Override
+    public String saveNewPassword(String oldPassword, String newPassword, HttpServletRequest request)
+    {
+        String salt = utilServices.getSalt(128);
+        String status = "";
+        Settings settings = settingsRepository.findByKeyName("passwordMinCharLength");
+        
+        try {
+            
+            User user = (User) request.getSession().getAttribute("dmpparserusersession");
+            
+            if(user != null)
+            {
+                if(user.getPassword().equals(SHA.encrypt(oldPassword + user.getSalt())) == false)
+                {
+                    status = "Please enter valid current password";
+                }
+                else if(newPassword.length() < Integer.parseInt(settings.getKeyValue()))
+                {
+                    status = "New password require at least " + settings.getKeyValue() + " char";
+                }
+                else
+                {
+                    user.setSalt(salt);
+                    user.setPassword(SHA.encrypt(newPassword + salt));
+                    user.setIsPasswordReset(Boolean.TRUE);
+                    user.setUpdatedAt(utilServices.getTodaysDate());
+                    user.setPasswordUpdatedOn(utilServices.getTodaysDate());
+                    
+                    if(userRepository.save(user) != null)
+                    {
+                        status = "Password changed successfully";
+                    }
+                }
+            }
+            else
+            {
+                status = "Invalid user";
+            }
+        } catch (NumberFormatException ex)
+        {
+            LOGGER.error(ex.toString());
+        }
+        
+        return status;
     }
 }

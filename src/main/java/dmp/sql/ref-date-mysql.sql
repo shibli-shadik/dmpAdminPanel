@@ -19,3 +19,6 @@ values
 '2017-11-27 17:04:55.8860000', 0, 0);
 --Password: 123
 
+--Settings
+insert into dmp_settings (key_name,key_value) values('passwordMinCharLength','8');
+
