@@ -10,9 +10,7 @@ import dmp.service.user.UserService;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Optional;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,6 +43,7 @@ public class UserController {
     @GetMapping(value = "")
     public String getUsers(Model model, HttpServletRequest request)
     {
+        request.getSession().setAttribute("dmpparsercurrenturl", "user");
         model.addAttribute("users", userRepository.findByIsDeletedFalse());
         
         return "user/userList";
@@ -138,10 +137,10 @@ public class UserController {
         return "user/viewDetails";
     }
     
-    
     @GetMapping("/userProfile")
-    public String userProfile(Model model, HttpServletRequest request) {
-        
+    public String userProfile(Model model, HttpServletRequest request) 
+    {
+        request.getSession().setAttribute("dmpparsercurrenturl", "user/userProfile");
         User user = (User) request.getSession().getAttribute("dmpparserusersession");
         user = userRepository.findById(user.getId()).get();
         
@@ -160,6 +159,7 @@ public class UserController {
     @GetMapping("/changePassword")
     public String changePassword(Model model, HttpServletRequest request) 
     {
+        request.getSession().setAttribute("dmpparsercurrenturl", "user/changePassword");
         Settings settings = settingsRepository.findByKeyName("passwordMinCharLength");
         model.addAttribute("passwordMinCharLength", settings.getKeyValue());
         

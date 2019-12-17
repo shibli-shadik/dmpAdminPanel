@@ -38,8 +38,9 @@ public class TransactionController
     private PdfService pdfService;
     
     @GetMapping(value = "")
-    public String getAllTransaction(Model model, @ModelAttribute("searchCmdTransaction") SearchCmdTransaction cmdTransaction)
+    public String getAllTransaction(Model model, HttpServletRequest request, @ModelAttribute("searchCmdTransaction") SearchCmdTransaction cmdTransaction)
     {
+        request.getSession().setAttribute("dmpparsercurrenturl", "transactions");
         model.addAttribute("searchCmdTransaction", cmdTransaction);
         
         List<Transaction> list = transactionService.getAllTransaction();

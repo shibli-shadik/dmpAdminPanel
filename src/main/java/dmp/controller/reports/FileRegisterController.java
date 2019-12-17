@@ -38,8 +38,9 @@ public class FileRegisterController
     private PdfService pdfService;
     
     @GetMapping(value = "")
-    public String getAllFiles(Model model, @ModelAttribute("searchCmdFileRegister") SearchCmdFileRegister cmdFileRegister)
+    public String getAllFiles(Model model, HttpServletRequest request, @ModelAttribute("searchCmdFileRegister") SearchCmdFileRegister cmdFileRegister)
     {
+        request.getSession().setAttribute("dmpparsercurrenturl", "fileRegister");
         model.addAttribute("searchCmdFileRegister", cmdFileRegister);
         
         List<FileRegister> list = fileRegisterService.getAllFiles();

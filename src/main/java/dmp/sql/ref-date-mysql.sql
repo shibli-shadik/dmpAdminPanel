@@ -20,5 +20,5 @@ values
 --Password: 123
 
 --Settings
-insert into dmp_settings (key_name,key_value) values('passwordMinCharLength','8');
+insert into dmp_settings (id, key_name,key_value) values(1, 'passwordMinCharLength','8');
 

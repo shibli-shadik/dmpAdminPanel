@@ -1,6 +1,5 @@
 package dmp.controller.admin.login;
 
-import dmp.model.enums.RoleType;
 import dmp.model.user.User;
 import dmp.model.user.repository.UserRepository;
 import dmp.service.user.LoginService;
@@ -32,9 +31,25 @@ public class LoginController
         {
             User user = userRepository.findByEmailAndIsDeletedFalseAndIsEnabledTrue(email);
             request.getSession().setAttribute("dmpparserusersession", user);
+           
+            //Redirect to last visited url
+            String strUrl = "";
+            
+            if(request.getSession().getAttribute("dmpparsercurrenturl") == null)
+            {
+                strUrl = "/home/home";
+                request.getSession().setAttribute("dmpparsercurrenturl", "home");
+            }
+            else
+            {
+                strUrl = "redirect:/" + request.getSession().getAttribute("dmpparsercurrenturl").toString();
+            }
+            request.getSession().setMaxInactiveInterval(60*5);
+            
             model.addAttribute("user", user);
             
-            return "/home/home";
+            //return "/home/home";
+            return strUrl;
         }
         else
         {
@@ -46,6 +61,7 @@ public class LoginController
     @GetMapping("/home")
     public String getHomePageInfo(Model model, HttpServletRequest request) 
     {
+        request.getSession().setAttribute("dmpparsercurrenturl", "home");
         return "home/home";
     }
     
@@ -53,6 +69,7 @@ public class LoginController
     public String getLogoutInfo(Model model, HttpServletRequest request) 
     {
         request.getSession().removeAttribute("dmpparserusersession");
+        request.getSession().removeAttribute("dmpparsercurrenturl");
         
         return "index";
     }
